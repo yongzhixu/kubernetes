@@ -16,7 +16,14 @@ logger.info('This never stops');
 logger.info('Logging logging all the way');
 logger.info('I think this is enough');
 logger.info('nope, one more!');
+app.get('/', function (req, res) {
+    logger.info('home page');
+    res.send('Hello World!');
+});
 
-app.listen(3001, function () {
-    logger.info("app listening on port 3001!");
+
+var server = app.listen(3001, function () {
+    var host = server.address().address;
+    var port = server.address().port;
+    logger.info('Example app listening at http://%s:%s', host, port);
 });
