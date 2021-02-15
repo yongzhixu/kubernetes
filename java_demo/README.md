@@ -12,4 +12,4 @@
     
 ##### push image to repo https://hub.docker.com/repository/docker/xuyongzhidocker/demo-app
 
-    docker push xuyongzhidocker/demo-app:tagname
+    docker push xuyongzhidocker/demo-app:java-1.0
