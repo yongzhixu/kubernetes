@@ -17,6 +17,6 @@ logger.info('Logging logging all the way');
 logger.info('I think this is enough');
 logger.info('nope, one more!');
 
-app.listen(3000, function () {
-    logger.info("app listening on port 3000!");
+app.listen(3001, function () {
+    logger.info("app listening on port 3001!");
 });
