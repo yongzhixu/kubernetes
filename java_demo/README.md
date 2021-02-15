@@ -6,7 +6,7 @@
 
     docker build -t java-app .
     
-##### push image to repo 
+##### push image to repo https://hub.docker.com/repository/docker/xuyongzhidocker/demo-app
 
     docker tag java-app xuyongzhidocker/demo-app:java-1.0
     
