@@ -4,4 +4,4 @@
     
 ##### push image to repo 
 
-    docker tag node-app demo-app:node-1.0
+    docker tag node-app xuyongzhidocker/demo-app:node-1.0
