@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldjava-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworldjava
+  template:
+    metadata:
+      labels:
+        app: helloworldjava
+    spec:
+      containers:
+      - name: k8s-demo
+        image: xuyongzhidocker/demo-app:java-demo-0.0.1
+        ports:
+        - name: java-port
+          containerPort: 8878
