@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 
 
 var server = app.listen(3001, function () {
-    var host = server.address().address;
-    var port = server.address().port;
+    let host = server.address().address;
+    let port = server.address().port;
     logger.info('Example app listening at http://%s:%s', host, port);
 });
