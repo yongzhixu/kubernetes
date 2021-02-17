@@ -3,6 +3,7 @@ kind: ReplicationController
 metadata:
   name: helloworldjava-controller
 spec:
+  # this well create two different pods
   replicas: 2
   selector:
     app: helloworldjava
