@@ -1,12 +1,11 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
-  name: helloworldjava-deployment
+  name: helloworldjava-controller
 spec:
-  replicas: 3
+  replicas: 2
   selector:
-    matchLabels:
-      app: helloworldjava
+    app: helloworldjava
   template:
     metadata:
       labels:

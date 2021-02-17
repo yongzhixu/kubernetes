@@ -26,5 +26,12 @@ kubectl attach helloworldnodejs.example.com
 echo "exec cmd inside the pod"
 kubectl exec helloworldnodejs.example.com -- ls /app 
 
+echo "Run a shell in a pod - very useful for debugging"
+kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+echo "then inside busybox. try telnet endpoint of a service(telnet ip port), then try 'GET path' to see if the service is up or not"
 
+echo "other ways of debugging"
+kubectl exec -it podname --bash
+kubectl logs podname
+kubectl attach podname -i
 
