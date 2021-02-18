@@ -16,6 +16,7 @@ logger.info('This never stops');
 logger.info('Logging logging all the way');
 logger.info('I think this is enough');
 logger.info('nope, one more!');
+logger.info('version 3');
 app.get('/', function (req, res) {
     logger.info('home page');
     res.send('Hello World!');
