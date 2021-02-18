@@ -32,7 +32,10 @@ kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 echo "then inside busybox. try telnet endpoint of a service(telnet ip port), then try 'GET path' to see if the service is up or not"
 
 echo "other ways of debugging"
-kubectl exec -it podname --bash
-kubectl logs -f podname
+echo "get inside container" 
+kubectl exec -it podname -- sh
+kubectl exec -it podname -- bash
 kubectl attach podname -i
+echo "viewing logs"
+kubectl logs -f podname
 

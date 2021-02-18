@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: k8s-demo
-        image: xuyongzhidocker/demo-app:java-demo-0.0.1
+        image: xuyongzhidocker/demo-app:java-demo-0.0.2
         ports:
         - name: java-port
           containerPort: 8081
+ 

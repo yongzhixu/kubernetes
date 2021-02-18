@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: k8s-demo
-        image: xuyongzhidocker/demo-app:node-demo-0.0.1
+        image: xuyongzhidocker/demo-app:node-demo-0.0.2
         ports:
         - name: nodejs-port
-          containerPort: 3000
+          containerPort: 3001
         livenessProbe:
           httpGet:
             path: /
@@ -26,7 +26,7 @@ spec:
           timeoutSeconds: 30
         readinessProbe:
           httpGet:
-            path: /
+            path: / 
             port: nodejs-port
           initialDelaySeconds: 15
           timeoutSeconds: 30
