@@ -14,6 +14,7 @@ echo "set up docker repository secrete"
 echo "create pod"    
 kubectl create -f y-helloworld-nodejs.yml
 kubectl describe pod helloworldnodejs.example.com
+kubectl describe pod/podname -n default # to see all the containr of this pod
 
 kubectl port-forward helloworldnodejs.example.com 8081:3001
 echo "or create the service"
@@ -26,5 +27,15 @@ kubectl attach helloworldnodejs.example.com
 echo "exec cmd inside the pod"
 kubectl exec helloworldnodejs.example.com -- ls /app 
 
+echo "Run a shell in a pod - very useful for debugging"
+kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+echo "then inside busybox. try telnet endpoint of a service(telnet ip port), then try 'GET path' to see if the service is up or not"
 
+echo "other ways of debugging"
+echo "get inside container" 
+kubectl exec -it podname -- sh
+kubectl exec -it podname -- bash
+kubectl attach podname -i
+echo "viewing logs"
+kubectl logs -f podname
 

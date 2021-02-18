@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: helloworldjava-controller
+spec:
+  # this well create two different pods
+  replicas: 2
+  selector:
+    app: helloworldjava
+  template:
+    metadata:
+      labels:
+        app: helloworldjava
+    spec:
+      containers:
+      - name: k8s-demo
+        image: xuyongzhidocker/demo-app:java-demo-0.0.2
+        ports:
+        - name: java-port
+          containerPort: 8081
+ 

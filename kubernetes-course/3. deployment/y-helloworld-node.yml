@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldnodejs-deployment
+spec:
+  replicas: 3
+  revisionHistoryLimit: 100
+  selector:
+    matchLabels:
+      app: helloworldnodejs
+  template:
+    metadata:
+      labels:
+        app: helloworldnodejs
+    spec:
+      containers:
+      - name: k8s-demo
+        image: xuyongzhidocker/demo-app:node-demo-0.0.2
+        ports:
+        - name: nodejs-port
+          containerPort: 3001
+      imagePullSecrets:
+        - name: myregistrysecret

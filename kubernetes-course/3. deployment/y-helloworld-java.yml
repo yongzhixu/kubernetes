@@ -17,4 +17,4 @@ spec:
         image: xuyongzhidocker/demo-app:java-demo-0.0.1
         ports:
         - name: java-port
-          containerPort: 8878
+          containerPort: 8081
