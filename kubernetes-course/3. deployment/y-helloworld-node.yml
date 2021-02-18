@@ -19,5 +19,5 @@ spec:
         ports:
         - name: nodejs-port
           containerPort: 3001
-  imagePullSecrets:
-    - name: myregistrysecret
+      imagePullSecrets:
+        - name: myregistrysecret
