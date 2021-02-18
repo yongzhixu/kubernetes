@@ -11,7 +11,7 @@ kubectl expose deployment deployment-name --type=NodePort
 kubectl get services
 kubectl describe service service-name
 
-echo "update deployment with new image" 
+echo "update deployment with new image, <k8s-demo> represents container name" 
 kubectl set image deployment/deployment-name k8s-demo=new image
 echo "Get deployment status" 
 kubectl rollout status deployment/deployment-name
