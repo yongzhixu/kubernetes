@@ -1,3 +1,4 @@
+# ===================================== create secret ====================================================
 echo "generate secret using files"
 echo -n "root" > ./username.txt
 echo -n "password" > ./password.txt
@@ -9,10 +10,11 @@ kubectl create secret generic ssl-certificate --from-file=ssh-privatekey=./.ssh/
 echo "generate secret using yaml definition"
 echo -n "root" | base64
 echo -n "password" | base64
+kubectl create -f helloworld-secrets.yml
 
 
-
-
+# ===================================== using secret ====================================================
+kubectl create -f helloworld-secrets-volumes.yml
 
 
 
