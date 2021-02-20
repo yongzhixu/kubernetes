@@ -14,13 +14,13 @@ spec:
     - name: config-volume
       mountPath: /etc/nginx/conf.d
   - name: k8s-demo
-    image: wardviaene/k8s-demo
+    image: xuyongzhidocker/demo-app:node-demo-0.0.2
     ports:
-    - containerPort: 3000
+    - containerPort: 3001
   volumes:
-    - name: config-volume
+    - name: config-volume # applied prevously by 'volumeMounts'
       configMap:
-        name: nginx-config
+        name: nginx-config # created separately and prior to this pod created
         items:
         - key: reverseproxy.conf
           path: reverseproxy.conf
