@@ -1,0 +1,1 @@
+kubectl drain node-name --force # delete the node by force

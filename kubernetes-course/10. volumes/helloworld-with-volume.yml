@@ -24,4 +24,4 @@ spec:
       volumes:
       - name: myvolume
         awsElasticBlockStore:
-          volumeID: # insert AWS EBS volumeID here
+          volumeID: # insert AWS EBS volumeID here. the instruction to create aws volumes can be found in readme.md
